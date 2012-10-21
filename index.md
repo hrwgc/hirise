@@ -1,7 +1,6 @@
 ---
 layout: page
 title: HiRISE Data Tools
-tagline: 
 ---
 {% include JB/setup %}
 

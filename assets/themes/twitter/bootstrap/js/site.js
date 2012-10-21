@@ -1,4 +1,4 @@
 $(document).ready(function() {
-	$('.table').addClass("table-bordered table-hover table-condensed");
-	$('pre').addClass('pre-scrollable');
+	$('table').addClass('table table-bordered table-striped table-hover table-condensed');
+	$('p').addClass('pre-scrollable');
 });
