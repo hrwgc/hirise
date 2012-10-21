@@ -13,24 +13,11 @@ tags:
 
 ## Spatial Reference
 
-
-Mars CRS for projection with 180 degrees at center (0 +180 +360)
-
-```
-+proj=eqc +lat_ts=0 +lat_0=0 +lon_0=180 +x_0=0 +y_0=0 +a=3396190 +b=3396190 +units=m +no_defs
-```
-
-Mars CRS for projection with 0 degrees at center (-180 0 +180)
-
-```
-+proj=eqc +lat_ts=0 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=3396190 +b=3396190 +units=m +no_defs
-```
-
 ### Resources
 
 
-[PROJ Equirectangular Projection Parameters](http://www.remotesensing.org/geotiff/proj_list/equirectangular.html)
-[HiRISE Dataset Map Projection Description](http://hirise-pds.lpl.arizona.edu/PDS/CATALOG/DSMAP.CAT)
+- [proj4 Equirectangular Projection Parameters](http://www.remotesensing.org/geotiff/proj_list/equirectangular.html)
+- [HiRISE Dataset Map Projection Description](http://hirise-pds.lpl.arizona.edu/PDS/CATALOG/DSMAP.CAT)
 
 
 ## Equirectangular 
@@ -62,29 +49,29 @@ False Northing | 7 | FalseNorthing | false_northing | False_Northing | +y_0 | Li
 
 - PROJ4
 
-```
+{% highlight %}
 +proj=eqc +lat_ts=0 +lat_0=0 +lon_0=180 +x_0=0 +y_0=0 +a=3396190 +b=3396190 +units=m +no_defs
-```
+{% endhighlight %}
 
 - .prj
 
-```
+{% highlight %}
 PROJCS["Mars_Equidistant_Cylindrical",GEOGCS["Mars 2000",DATUM["D_Mars_2000",SPHEROID["Mars_2000_IAU_IAG",3396190.0,169.89444722361179]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]],PROJECTION["Equidistant_Cylindrical"],PARAMETER["False_Easting",0],PARAMETER["False_Northing",0],PARAMETER["Central_Meridian",180],PARAMETER["Standard_Parallel_1",0],UNIT["Meter",1]]
-```
+{% endhighlight %}
 
 ### Equirectangular / Equidistant Cylindrical (IAU2000:49911) with Center at 0
 
 - PROJ4
 
-```
+{% highlight %}
 +proj=eqc +lat_ts=0 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +a=3396190 +b=3396190 +units=m +no_defs
-```
+{% endhighlight %}
 
 - .prj
 
-```
+{% highlight %}
 PROJCS["Mars_Equidistant_Cylindrical",GEOGCS["Mars 2000",DATUM["D_Mars_2000",SPHEROID["Mars_2000_IAU_IAG",3396190.0,169.89444722361179]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]],PROJECTION["Equidistant_Cylindrical"],PARAMETER["False_Easting",0],PARAMETER["False_Northing",0],PARAMETER["Central_Meridian",0],PARAMETER["Standard_Parallel_1",0],UNIT["Meter",1]]
-```
+{% endhighlight %}
 
 
 ## Polar Stereographic
@@ -105,11 +92,11 @@ Rp    | C_AXIS_RADIUS | polar radius of Mars, 3376.2 km
 ### [PROJ.4 Specification](http://www.remotesensing.org/geotiff/proj_list/equirectangular.html)
 
 Name | EPSG # | GeoTIFF ID | OGC WKT | Units |  Proj.4 North Pole | Proj.4 South Pole
---- | --- | --- | --- | --- | --- |
+--- | --- | --- | --- | --- | --- | --- |
 Latitude of natural origin | 1 | NatOriginLat | latitude_of_origin | Angular |  +lat_0=90 | +lat_0=-90
 Latitude of True Scale | | | | | +lat_ts | +lat_ts
 Longitude of natural origin | 2 | StraightVertPoleLong | central_meridian | Angular | +lon_0 | +lon_0 |
-Scale factor at natural origin | 5 | ScaleAtNatOrigin | scale_factor | Unitless | +k_0 | +k_0_
+Scale factor at natural origin | 5 | ScaleAtNatOrigin | scale_factor | Unitless | +k_0 | +k_0
 False Easting | 6 | FalseEasting | false_easting | Linear | +x_0 | +x_0
 False Northing | 7 | FalseNorthing | false_northing | Linear | +y_0 | +y_0
 
@@ -119,29 +106,29 @@ False Northing | 7 | FalseNorthing | false_northing | Linear | +y_0 | +y_0
 
 - PROJ 4
 
-```
+{% highlight %}
 +proj=stere +lat_0=90 +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=3396190 +b=3376200 +units=m +no_defs 
-```
+{% endhighlight %}
 
 - .prj
 
-```
+{% highlight %}
 PROJCS["Mars_North_Pole_Stereographic",GEOGCS["Mars 2000",DATUM["D_Mars_2000",SPHEROID["Mars_2000_IAU_IAG",3396190.0,169.89444722361179]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]],PROJECTION["Stereographic"],PARAMETER["False_Easting",0],PARAMETER["False_Northing",0],PARAMETER["Central_Meridian",0],PARAMETER["Scale_Factor",1],PARAMETER["Latitude_Of_Origin",90],UNIT["Meter",1]]
-```
+{% endhighlight %}
 
 ### South Polar Stereographic (IAU2000:49920)
 
 - PROJ4
 
-```
+{% highlight %}
 +proj=stere +lat_0=-90 +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=3396190 +b=3376200 +units=m +no_defs 
-```
+{% endhighlight %}
 
 - .prj
 
-```
+{% highlight %}
 PROJCS["Mars_South_Pole_Stereographic",GEOGCS["Mars 2000",DATUM["D_Mars_2000",SPHEROID["Mars_2000_IAU_IAG",3396190.0,169.89444722361179]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]],PROJECTION["Stereographic"],PARAMETER["False_Easting",0],PARAMETER["False_Northing",0],PARAMETER["Central_Meridian",0],PARAMETER["Scale_Factor",1],PARAMETER["Latitude_Of_Origin",-90],UNIT["Meter",1]]
-```
+{% endhighlight %}
 
 
 
