@@ -657,11 +657,3 @@ cat LABEL_FILES.txt | while read LINE; do
       let ACTIVE=0
   fi
 done
-ls -1 TMP | while read LINE; do
-    cat TMP/$LINE >> HIRISE_PARSED.csv; 
-	cat TMP/$LINE | \
-	   grep -Ev STEREOGRAPHIC >> EQUIRECTANGULAR.csv
-	cat TMP/$LINE | \
-	   grep -Ev EQUIRECTANGULAR >> STEREOGRAPHIC.csv && \
-    mv TMP/$LINE DONE/CSV/$LINE;
-done
